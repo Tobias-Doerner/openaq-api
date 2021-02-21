@@ -1,0 +1,24 @@
+{
+  "name": "openaq-api",
+  "version": "2.0.0",
+  "description": "Api for OpenAQ LCS",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "npm run generate && tsc",
+    "generate": "npx @openapitools/openapi-generator-cli generate -i ./openaq_api.yaml -g typescript-axios -o src/generated"
+  },
+  "keywords": [],
+  "author": "Tobias Dörner <tobias.doerner.com@mailbox.org> (https://github.com/Tobias-Doerner)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tobias-Doerner/openaq-api.git"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "2.1.24",
+    "axios": "^0.21.1",
+    "typescript": "^4.1.5"
+  }
+}
